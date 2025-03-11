@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>TripTales</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-secondary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid nav-bar p-0">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="display-5 text-secondary m-0"><img src="img/brand-logo.png" class="img-fluid" alt="">TripTales</h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="service.html" class="nav-item nav-link">Service</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <button class="btn btn-primary btn-md-square border-secondary mb-3 mb-md-3 mb-lg-0 me-3" data-bs-toggle="modal" data-bs-target="#searchModal">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    
+                    <a href="" class="btn btn-primary border-secondary rounded-pill py-2 px-4 px-lg-3 mb-3 mb-md-3 mb-lg-0">Get A Ticket</a>
+                    
+                </div>
+            </nav>
+        </div>
+        <!-- Navbar & Hero End -->
+         
+<!-- Carousel Start -->
+<div class="carousel-header">
+    <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+
+<!-- Indicators (ปุ่มตำแหน่งด้านล่าง) -->
+<div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselId" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#carouselId" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#carouselId" data-bs-slide-to="2"></button>
+    <button type="button" data-bs-target="#carouselId" data-bs-slide-to="3"></button>
+
+</div>
+
+
+
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="3000">
+                <img src="img/1.PNG" class="d-block w-100" alt="Image">
+                <div class="carousel-caption">
+                 
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="img/2.PNG" class="d-block w-100" alt="Image">
+                <div class="carousel-caption">
+                  
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="img/3.PNG" class="d-block w-100" alt="Image">
+                <div class="carousel-caption">
+                  
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="img/4.PNG" class="d-block w-100" alt="Image">
+                <div class="carousel-caption">
+                   
+                </div>
+            </div>
+            
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</div>
+<!-- Carousel End -->
+
+
+<!-- Booking Section -->
+<section class="book_section py-5">
+    <div class="container">
+      <div class="booking-form">
+        <h2 class="text-center">Your Trip Now</h2>
+        <p class="text-center">จองตั๋วเครื่องบิน โรงแรม หรือทัวร์ ได้ง่ายๆ เพียงไม่กี่คลิก</p>
+  
+        <form>
+          <!-- ประเภทการจอง -->
+          <div class="form-group">
+            <label for="bookingType">เลือกประเภทการจอง</label>
+            <select class="form-control rounded-input" id="bookingType" onchange="toggleBookingFields()">
+              <option value="flight">✈️ จองตั๋วเครื่องบิน</option>
+              <option value="hotel">🏨 จองโรงแรม</option>
+              <option value="tour">🗺️ จองทัวร์</option>
+            </select>
+          </div>
+  
+          <!-- สำหรับการจองตั๋วเครื่องบิน -->
+          <div id="flightFields">
+            <div class="row">
+              <div class="col-md-6">
+                <label>จาก (From)</label>
+                <input type="text" class="form-control rounded-input" placeholder="กรอกต้นทาง">
+              </div>
+              <div class="col-md-6">
+                <label>ถึง (To)</label>
+                <input type="text" class="form-control rounded-input" placeholder="กรอกปลายทาง">
+              </div>
+            </div>
+          </div>
+  
+          <!-- สำหรับการจองโรงแรม -->
+          <div id="hotelFields" style="display: none;">
+            <div class="form-group">
+              <label>เลือกเมือง / โรงแรม</label>
+              <input type="text" class="form-control rounded-input" placeholder="กรอกชื่อโรงแรมหรือเมือง">
+            </div>
+          </div>
+  
+          <!-- สำหรับการจองทัวร์ -->
+          <div id="tourFields" style="display: none;">
+            <div class="form-group">
+              <label>เลือกแพ็กเกจทัวร์</label>
+              <input type="text" class="form-control rounded-input" placeholder="กรอกชื่อทัวร์">
+            </div>
+          </div>
+  
+          <!-- ข้อมูลทั่วไป -->
+          <div class="row">
+            <div class="col-md-6">
+              <label>วันเดินทาง</label>
+              <input type="date" class="form-control rounded-input">
+            </div>
+            <div class="col-md-6">
+              <label>ราคาโดยประมาณ</label>
+              <input type="text" class="form-control rounded-input" placeholder="กรอกงบประมาณ">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label>อีเมล</label>
+              <input type="email" class="form-control rounded-input" placeholder="กรอกอีเมล">
+            </div>
+            <div class="col-md-6">
+              <label>เบอร์โทรศัพท์</label>
+              <input type="text" class="form-control rounded-input" placeholder="กรอกเบอร์โทร">
+            </div>
+          </div>
+  
+          <div class="d-flex justify-content-center mt-4">
+            <button type="submit" class="btn gradient-btn">📍 จองเลย</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- End Booking Section -->
+  
+
+        <!-- Modal Search Start -->
+        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content rounded-0">
+                    <div class="modal-header">
+                        <h4 class="modal-title text-secondary mb-0" id="exampleModalLabel">Search by keyword</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex align-items-center">
+                        <div class="input-group w-75 mx-auto d-flex">
+                            <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
+                            <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Search End -->
+
+
+
+        <!-- About Start -->
+        <div class="container-fluid py-5"> 
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-xl-5 wow fadeInLeft" data-wow-delay="0.1s">
+                        <div class="bg-light rounded">
+                            <img src="img/about-2.png" class="img-fluid w-100" style="margin-bottom: -7px;" alt="Image">
+                            <img src="img/ee8fe644f399c983043d2394975915d76b57dd05.jpg" class="img-fluid w-100 border-bottom border-5 border-primary" style="border-top-right-radius: 300px; border-top-left-radius: 300px;" alt="Image">
+                        </div> 
+                    </div>
+                    <div class="col-xl-7 wow fadeInRight" data-wow-delay="0.3s">
+                        <h5 class="sub-title pe-3">เกี่ยวกับบริษัท</h5>
+                        <h1 class="display-5 mb-4">เราคือบริษัททัวร์ที่ได้รับความไว้วางใจ จากลูกค้าทั่วไทยและทั่วโลก</h1>
+                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt architecto consectetur iusto perferendis blanditiis assumenda dignissimos, commodi fuga culpa earum explicabo libero sint est mollitia saepe! Sequi asperiores rerum nemo!</p>
+                        <div class="row gy-4 align-items-center">
+                            <div class="col-12 col-sm-6 d-flex align-item -center">
+                                <i class="fas fa-map-marked-alt fa-3x text-warning"></i>
+                                <h5 class="ms-4">ทัวร์สุดพิเศษทั่วไทยและทั่วโลก</h5>
+                            </div>
+                            <div class="col-12 col-sm-6 d-flex align-items-center">
+                                <i class="fas fa-passport fa-3x text-warning"></i>
+                                <h5 class="ms-4">ทัวร์หลากหลายเส้นทาง ทั้งในประเทศและต่างประเทศ</h5>
+                            </div>
+                            <div class="col-4 col-md-3">
+                                <div class="bg-light text-center rounded p-3">
+                                    <div class="mb-2">
+                                        <i class="fas fa-ticket-alt fa-4x text-warning"></i>
+                                    </div>
+                                    <h1 class="display-5 fw-bold mb-2">34</h1>
+                                    <p class="text-muted mb-0">ประสบการณ์กว่า 34 ปีในการบริการทัวร์</p>
+                                </div>
+                            </div>
+                            <div class="col-8 col-md-9">
+                                <div class="mb-5">
+                                    <p class="text-primary h6 mb-3"><i class="fa fa-check-circle text-warning me-2"></i> บริการที่จริงใจ 100%</p>
+                                    <p class="text-primary h6 mb-3"><i class="fa fa-check-circle text-warning me-2"></i> การเดินทางรวดเร็วและเชื่อถือได้</p>
+                                    <p class="text-primary h6 mb-3"><i class="fa fa-check-circle text-warning me-2"></i> คำแนะนำจากผู้เชี่ยวชาญด้านการท่องเที่ยว</p>
+                                </div>
+                                <div class="d-flex flex-wrap">
+                                    <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
+                                        <a href="" class="position-relative wow tada" data-wow-delay=".9s">
+                                            <i class="fa fa-phone-alt text-primary fa-3x"></i>
+                                            <div class="position-absolute" style="top: 0; left: 25px;">
+                                                <span><i class="fa fa-comment-dots text-warning"></i></span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <span class="text-primary">มีคำถามไหม?</span>
+                                        <span class="text-warning fw-bold fs-5" style="letter-spacing: 2px;">โทรฟรี: +66933747620</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+
+
+        <!-- Features Start -->
+        <div class="container-fluid features overflow-hidden py-5">
+            <div class="container">
+                <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="sub-style">
+                        <h5 class="sub-title text-primary px-3">ทำไมต้องเลือกเรา</h5>
+                    </div>
+                    <h1 class="display-5 mb-4">เราให้บริการทัวร์ที่ออกแบบมาเพื่อตอบสนองความต้องการของลูกค้า</h1>
+                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas maxime veniam necessitatibus saepe in ab? Repellat!</p>
+                </div>
+                <div class="row g-4 justify-content-center text-center">
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="feature-item text-center p-4">
+                            <div class="feature-icon p-3 mb-4">
+                                <i class="fas fa-dollar-sign fa-4x text-primary"></i>
+                            </div>
+                            <div class="feature-content d-flex flex-column">
+                                <h5 class="mb-3">💰 คุ้มค่า ราคาโดนใจ</h5>
+                                <p class="mb-3">เดินทางท่องเที่ยวในราคาสุดประหยัด พร้อมบริการที่ดีที่สุด</p>
+                                <a class="btn btn-secondary rounded-pill" href="#">Read More<i class="fas fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="feature-item text-center p-4">
+                            <div class="feature-icon p-3 mb-4">
+                                <i class="fab fa-cc-visa fa-4x text-primary"></i>
+                            </div>
+                            <div class="feature-content d-flex flex-column">
+                                <h5 class="mb-3">🌍 บริการวีซ่าและเอกสารการเดินทาง</h5>
+                                <p class="mb-3">ดูแลและให้คำปรึกษาการขอวีซ่า เพื่อให้ทริปของคุณราบรื่น</p>
+                                <a class="btn btn-secondary rounded-pill" href="#">Read More<i class="fas fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="feature-item text-center p-4">
+                            <div class="feature-icon p-3 mb-4">
+                                <i class="fas fa-atlas fa-4x text-primary"></i>
+                            </div>
+                            <div class="feature-content d-flex flex-column">
+                                <h5 class="mb-3">🚀 ดำเนินการรวดเร็ว          </h5>
+                                <p class="mb-3">จองทัวร์ วางแผน และเตรียมการเดินทางได้อย่างรวดเร็วทันใจ</p>
+                                <a class="btn btn-secondary rounded-pill" href="#">Read More<i class="fas fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="feature-item text-center p-4">
+                            <div class="feature-icon p-3 mb-4">
+                                <i class="fas fa-users fa-4x text-primary"></i>
+                            </div>
+                            <div class="feature-content d-flex flex-column">
+                                <h5 class="mb-3">👥 ทีมงานมืออาชีพ พร้อมให้คำแนะนำ</h5>
+                                <p class="mb-3">ดูแลทุกขั้นตอน ตั้งแต่การจองไปจนถึงการเดินทาง</p>
+                                <a class="btn btn-secondary rounded-pill" href="#">Read More<i class="fas fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <a class="btn btn-primary border-secondary rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.1s" href="#">🔗 ดูเพิ่มเติม</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Features End -->
+
+
+
+        <!-- Testimonial Start -->
+        <div class="container-fluid testimonial overflow-hidden pb-5">
+            <div class="container py-5">
+                <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="sub-style">
+                        <h5 class="sub-title text-primary px-3">รีวิวจากลูกค้าของเรา</h5>
+                    </div>
+                    <h1 class="display-5 mb-4">เสียงตอบรับจากนักเดินทางที่เลือกใช้บริการของเรา</h1>
+                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas maxime veniam necessitatibus saepe in ab? Repellat!</p>
+                </div>
+                <div class="owl-carousel testimonial-carousel wow zoomInDown" data-wow-delay="0.2s">
+                    <div class="testimonial-item">
+                        <div class="testimonial-content p-4 mb-5">
+                            <p class="fs-5 mb-0">🗨️ "ทริปสุดประทับใจ! ทีมงานดูแลดีมาก ตั้งแต่เริ่มจองจนจบทริป แนะนำเลยค่ะ"
+                            </p>
+                            <div class="d-flex justify-content-end">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            
+                        </div>
+                        <div class="d-flex">
+                            <div class="rounded-circle me-4" style="width: 100px; height: 100px;">
+                                <img class="img-fluid rounded-circle" src="img/testimonial-1.jpg" alt="img">
+                            </div>
+                            <div class="my-auto">
+                                <h5>คุณสมศรี นักท่องเที่ยว</h5>
+                                <p class="mb-0">Profession</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="testimonial-content p-4 mb-5">
+                            <p class="fs-5 mb-0">🗨️ "บริการยอดเยี่ยม แพ็กเกจคุ้มค่า เที่ยวสนุกไม่มีสะดุดแน่นอน!"</p>
+                            <div class="d-flex justify-content-end">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            
+                        </div>
+                        <div class="d-flex">
+                            <div class="rounded-circle me-4" style="width: 100px; height: 100px;">
+                                <img class="img-fluid rounded-circle" src="img/testimonial-2.jpg" alt="img">
+                            </div>
+                            <div class="my-auto">
+                                <h5>คุณกานต์ นักเดินทาง</h5>
+                                <p class="mb-0">Profession</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="testimonial-content p-4 mb-5">
+                            <p class="fs-5 mb-0">🗨️ "การจัดทัวร์เป็นมืออาชีพ ไกด์เป็นกันเอง ดูแลดีมาก ทริปนี้ฟินสุดๆ!"</p>
+                            <div class="d-flex justify-content-end">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            
+                        </div>
+                        <div class="d-flex">
+                            <div class="rounded-circle me-4" style="width: 100px; height: 100px;">
+                                <img class="img-fluid rounded-circle" src="img/testimonial-3.jpg" alt="img">
+                            </div>
+                            <div class="my-auto">
+                                <h5>คุณวิน นักท่องเที่ยวสายลุย</h5>
+                                <p class="mb-0">Profession</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial End -->
+
+
+
+<!-- Contact Start -->
+<div class="container-fluid contact overflow-hidden pb-5">
+    <div class="container py-5">
+        <div class="office pt-5">
+            <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="sub-style">
+                    <h5 class="sub-title text-primary px-3">สำนักงานทัวร์ทั่วโลก</h5>
+                </div>
+                <h1 class="display-5 mb-4">ติดต่อสำนักงานทัวร์ของเรา</h1>
+                <p class="mb-0">เรามีสำนักงานในหลายประเทศทั่วโลก พร้อมให้คำแนะนำและบริการท่องเที่ยวที่ดีที่สุดสำหรับคุณ</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <!-- สำนักงานไทย -->
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="office-item p-4">
+                        <div class="office-img mb-4">
+                            <img src="img/The-Grand-Palace-Bangkok-Thailand-20140413.jpg" class="img-fluid w-100 rounded" alt="Thailand">
+                        </div>
+                        <div class="office-content d-flex flex-column">
+                            <h4 class="mb-2">ประเทศไทย</h4>
+                            <a href="tel:+66987654321" class="text-warning fs-5 mb-2">+66 9876 54321</a>
+                            <a href="mailto:thailand@tourcompany.com" class="text-muted fs-5 mb-2">thailand@tourcompany.com</a>
+                            <p class="mb-0">123 ถนนสุขุมวิท, กรุงเทพฯ 10110, ประเทศไทย</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- สำนักงานญี่ปุ่น -->
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="office-item p-4">
+                        <div class="office-img mb-4">
+                            <img src="img/Kawaguchiko-Chureito-Pagoda-01.jpg" class="img-fluid w-100 rounded" alt="Japan">
+                        </div>
+                        <div class="office-content d-flex flex-column">
+                            <h4 class="mb-2">ญี่ปุ่น</h4>
+                            <a href="tel:+81987654321" class="text-warning fs-5 mb-2">+81 9876 54321</a>
+                            <a href="mailto:japan@tourcompany.com" class="text-muted fs-5 mb-2">japan@tourcompany.com</a>
+                            <p class="mb-0">456 ถนนชินจูกุ, โตเกียว 160-0022, ประเทศญี่ปุ่น</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- สำนักงานฝรั่งเศส -->
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.5s"> 
+                    <div class="office-item p-4">
+                        <div class="office-img mb-4">
+                            <img src="img/1-1.jpg" class="img-fluid w-100 rounded" alt="France">
+                        </div>
+                        <div class="office-content d-flex flex-column">
+                            <h4 class="mb-2">ฝรั่งเศส</h4>
+                            <a href="tel:+33123456789" class="text-warning fs-5 mb-2">+33 1234 56789</a>
+                            <a href="mailto:france@tourcompany.com" class="text-muted fs-5 mb-2">france@tourcompany.com</a>
+                            <p class="mb-0">789 ถนนชองเซลิเซ่, ปารีส 75008, ฝรั่งเศส</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- สำนักงานสหรัฐอเมริกา -->
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="office-item p-4">
+                        <div class="office-img mb-4">
+                            <img src="img/Rancho-Nov14-1-scaled.jpg" class="img-fluid w-100 rounded" alt="USA">
+                        </div>
+                        <div class="office-content d-flex flex-column">
+                            <h4 class="mb-2">สหรัฐอเมริกา</h4>
+                            <a href="tel:+18001234567" class="text-warning fs-5 mb-2">+1 800 123 4567</a>
+                            <a href="mailto:usa@tourcompany.com" class="text-muted fs-5 mb-2">usa@tourcompany.com</a>
+                            <p class="mb-0">100 ถนนไทม์สแควร์, นิวยอร์ก 10036, สหรัฐอเมริกา</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
+
+
+<!-- Footer Start -->
+<div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <!-- ข้อมูลติดต่อ -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="text-warning mb-4">ติดต่อเรา</h4>
+                    <a href=""><i class="fa fa-map-marker-alt me-2"></i> 123 ถนนสุขุมวิท, กรุงเทพฯ, ประเทศไทย</a>
+                    <a href=""><i class="fas fa-envelope me-2"></i> info@tourcompany.com</a>
+                    <a href=""><i class="fas fa-phone me-2"></i> +66 9876 54321</a>
+                    <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +66 2123 45678</a>
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-share fa-2x text-warning me-2"></i>
+                        <a class="btn mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn mx-1" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="btn mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- เวลาทำการ -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="text-warning mb-4">เวลาเปิดทำการ</h4>
+                    <div class="mb-3">
+                        <h6 class="text-muted mb-0">จันทร์ - ศุกร์:</h6>
+                        <p class="text-white mb-0">09:00 น. - 19:00 น.</p>
+                    </div>
+                    <div class="mb-3">
+                        <h6 class="text-muted mb-0">วันเสาร์:</h6>
+                        <p class="text-white mb-0">10:00 น. - 17:00 น.</p>
+                    </div>
+                    <div class="mb-3">
+                        <h6 class="text-muted mb-0">วันหยุด:</h6>
+                        <p class="text-white mb-0">ปิดทำการทุกวันอาทิตย์</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- บริการของเรา -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="text-warning mb-4">บริการของเรา</h4>
+                    <a href="#" class=""><i class="fas fa-angle-right me-2"></i> แพ็กเกจทัวร์</a>
+                    <a href="#" class=""><i class="fas fa-angle-right me-2"></i> วีซ่า & เอกสาร</a>
+                    <a href="#" class=""><i class="fas fa-angle-right me-2"></i> ประกันการเดินทาง</a>
+                    <a href="#" class=""><i class="fas fa-angle-right me-2"></i> ที่พัก & โรงแรม</a>
+                    <a href="#" class=""><i class="fas fa-angle-right me-2"></i> ที่ปรึกษาการเดินทาง</a>
+                    <a href="#" class=""><i class="fas fa-angle-right me-2"></i> ตั๋วเครื่องบิน</a>
+                </div>
+            </div>
+
+            <!-- สมัครรับข่าวสาร -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item">
+                    <h4 class="text-warning mb-4">สมัครรับข่าวสาร</h4>
+                    <p class="text-white mb-3">ติดตามโปรโมชั่นทัวร์และข้อเสนอพิเศษก่อนใคร เพียงกรอกอีเมลของคุณ</p>
+                    <div class="position-relative mx-auto rounded-pill">
+                        <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="กรอกอีเมลของคุณ">
+                        <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">สมัครเลย</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+        
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright py-4">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-md-0">
+                        <span class="text-white"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end text-white">
+                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                        Designed By <a class="border-bottom text-white" href="startbootstrap-sb-admin-2-gh-pages/login.html">HTML Codex</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    </body>
+
+</html>
